@@ -1,0 +1,359 @@
+/* Tailwind CSS Custom Styles */
+        /* General Body and Font Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+
+        /* Card Styling (Reused for many sections) */
+        .card {
+            border-radius: 0.75rem; /* More rounded corners */
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04); /* Deeper, softer shadow */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-3px); /* Subtle lift on hover */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Button Styling */
+        .btn {
+            padding: 0.75rem 1.5rem; /* Larger padding for better touch targets */
+            border-radius: 0.5rem; /* More rounded */
+            font-weight: 600; /* Slightly bolder text */
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            overflow: hidden; /* Ensure spinner fits */
+            position: relative; /* For spinner positioning */
+        }
+        .btn-primary {
+            background-image: linear-gradient(to right, #10b981, #059669); /* Emerald gradient */
+            color: #ffffff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-image: linear-gradient(to right, #059669, #047857); /* Darker gradient on hover */
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4); /* Green shadow */
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: #4b5563; /* gray-600 */
+            border: 2px solid #d1d5db; /* gray-300, slightly thicker border */
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background-color: #f3f4f6; /* gray-100 */
+            border-color: #9ca3af; /* Darker border on hover */
+        }
+        .btn-destructive {
+            background-color: #ef4444; /* red-500 */
+            color: #ffffff;
+            border: none;
+        }
+        .btn-destructive:hover {
+            background-color: #dc2626; /* red-600 */
+            box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4); /* Red shadow */
+        }
+        .btn-ghost {
+            background-color: transparent;
+            color: currentColor;
+            border: none;
+        }
+        .btn-ghost:hover {
+            background-color: rgba(255, 255, 255, 0.15); /* Slightly more prominent hover */
+            border-radius: 0.5rem;
+        }
+
+        /* Input, Textarea, Select Styling */
+        .input, .textarea, .select-trigger {
+            display: block;
+            width: 100%;
+            padding: 0.875rem 1.25rem; /* Increased padding */
+            font-size: 1rem;
+            line-height: 1.5;
+            border: 1px solid #d1d5db; /* gray-300 */
+            border-radius: 0.5rem; /* More rounded */
+            background-color: #ffffff;
+            color: #1f2937; /* gray-900 */
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06); /* Inner shadow for depth */
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .input:focus, .textarea:focus, .select-trigger:focus {
+            border-color: #10b981; /* Emerald-500 */
+            outline: 0;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.06); /* More prominent focus ring */
+        }
+        .label {
+            display: block;
+            font-size: 0.95rem; /* Slightly larger text */
+            font-weight: 600; /* Bolder */
+            color: #374151; /* gray-700 */
+            margin-bottom: 0.6rem; /* Increased margin */
+        }
+
+        /* Badge Styling */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.8rem; /* Larger padding */
+            border-radius: 9999px; /* Fully rounded */
+            font-size: 0.8rem; /* Slightly larger text */
+            font-weight: 600; /* Bolder */
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .badge-default {
+            background-color: #047857; /* Darker emerald for strong positive */
+            color: #ffffff;
+        }
+        .badge-secondary {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #374151; /* gray-700 */
+        }
+        .badge-destructive {
+            background-color: #b91c1c; /* Darker red */
+            color: #ffffff;
+        }
+        .badge-outline {
+            background-color: transparent;
+            border: 1px solid #9ca3af; /* gray-400 */
+            color: #4b5563; /* gray-600 */
+        }
+        /* New badge for recommendations */
+        .badge-recommended {
+            background-color: #3b82f6; /* Blue-500 */
+            color: #ffffff;
+        }
+
+        /* Table Styling */
+        .table {
+            width: 100%;
+            border-collapse: separate; /* For rounded corners on cells */
+            border-spacing: 0; /* Remove default spacing */
+            border-radius: 0.75rem; /* Rounded table corners */
+            overflow: hidden; /* Hide overflowing borders */
+        }
+        .table th, .table td {
+            padding: 1rem; /* More padding */
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb; /* gray-200 */
+        }
+        .table th {
+            font-weight: 700; /* Extra bold */
+            color: #4b5563; /* gray-600 */
+            text-transform: uppercase;
+            font-size: 0.8rem; /* Slightly larger */
+            letter-spacing: 0.08em; /* More tracking */
+            background-color: #f9fafb; /* Light header background */
+        }
+        .table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Tabs Styling - UPDATED */
+        .tabs-list {
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Allow tabs to wrap to next line */
+            justify-content: center; /* Center align on small screens */
+            gap: 0.75rem; /* Space between tabs */
+            padding: 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 0.75rem;
+            overflow-x: auto; /* Still allow horizontal scroll if necessary */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (min-width: 640px) { /* sm breakpoint */
+            .tabs-list {
+                justify-content: flex-start; /* Left align on larger screens */
+            }
+        }
+
+        .tabs-trigger {
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.6rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            flex-shrink: 0; /* Prevent tabs from shrinking */
+        }
+        .tabs-trigger[data-state="active"] {
+            background-color: #ffffff;
+            color: #059669;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
+
+        /* Custom Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s forwards;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2.5rem; /* More padding */
+            border-radius: 1rem; /* Even more rounded */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); /* Stronger, softer shadow */
+            max-width: 90%;
+            width: 450px; /* Slightly wider */
+            text-align: center;
+            animation: slideInFromTop 0.3s forwards;
+        }
+        .modal-content h3 {
+            font-size: 1.5rem; /* Larger title */
+            font-weight: 700; /* Bolder */
+            margin-bottom: 1.25rem;
+            color: #1f2937;
+        }
+        .modal-content p {
+            color: #4b5563;
+            margin-bottom: 1.75rem;
+            line-height: 1.6;
+        }
+        .modal-content button {
+            /* Inherits btn-primary styles for consistency */
+        }
+
+        /* Toast Notification Styling */
+        #toast-container {
+            position: fixed;
+            top: 1.5rem; /* Slightly lower */
+            right: 1.5rem; /* Slightly more inwards */
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem; /* More space between toasts */
+        }
+        .toast {
+            background-color: #374151; /* Darker, more neutral background */
+            color: white;
+            padding: 0.8rem 1.4rem; /* More padding */
+            border-radius: 0.6rem; /* More rounded */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideIn 0.3s forwards, fadeOut 0.5s 2.7s forwards; /* Longer display */
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+        .toast.bg-green-500 { background-color: #059669; /* Emerald for success */ }
+        .toast.bg-red-500 { background-color: #dc2626; /* Red for error */ }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; }
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.4); /* Thinner border */
+            border-top: 3px solid #fff;
+            border-radius: 50%;
+            width: 18px; /* Slightly larger */
+            height: 18px;
+            animation: spin 0.8s linear infinite; /* Faster spin */
+            margin-right: 0.6rem; /* Adjusted margin */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Simple Bar Chart for Admin Dashboard */
+        .bar-chart-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 1.25rem; /* Increased gap */
+            height: 180px; /* Taller chart */
+            padding: 1.5rem;
+            background-color: #fefefe; /* Whiter background */
+            border-radius: 0.75rem;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.05); /* More prominent inner shadow */
+            border: 1px solid #e2e8f0;
+            margin-top: 2rem; /* More space */
+        }
+        .bar {
+            flex-grow: 1;
+            width: 30%;
+            transition: height 0.6s ease-out; /* Slower transition */
+            border-radius: 0.35rem 0.35rem 0 0; /* Slightly more rounded tops */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 0.9rem; /* Slightly larger */
+            color: #1f2937;
+            position: relative;
+            background-color: #34d399; /* default - light green */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .bar-label {
+            position: absolute;
+            bottom: -1.8rem; /* Adjusted position */
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4b5563;
+        }
+        .bar-value {
+             position: absolute;
+             top: -1.8rem; /* Adjusted position */
+             font-size: 1rem; /* Larger value */
+             font-weight: bold;
+             color: #1f2937;
+             padding: 0.2rem 0.5rem;
+             background-color: rgba(255,255,255,0.8);
+             border-radius: 0.3rem;
+        }
+        .bar.pending { background-color: #fcd34d; /* Amber-300 */ }
+        .bar.approved { background-color: #10b981; /* Emerald-500 */ }
+        .bar.rejected { background-color: #f87171; /* Red-400 */ }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2d3748; /* Darker gray for a stronger footer */
+            color: #d1d5db; /* gray-300 */
+            padding: 2.5rem 1.5rem; /* More padding */
+            text-align: center;
+            margin-top: 5rem; /* More separation from content */
+            font-size: 0.95rem;
+        }
+        footer a {
+            color: #93c5fd; /* blue-300 */
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        footer a:hover {
+            color: #c0d8f7; /* Lighter blue on hover */
+            text-decoration: underline;
+        }
+    
