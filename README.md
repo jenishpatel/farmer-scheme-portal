@@ -11,6 +11,7 @@
     <br />
     <a href="https://agriportal-app.netlify.app/"><strong>View Live Demo »</strong></a>
     <br />
+    <p><h3>NOTE: if live demo not load properly refresh website</h3></p>
   </p>
 </div>
 
